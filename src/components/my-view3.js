@@ -45,6 +45,10 @@ class MyView3 extends connect(store)(PageViewElement) {
     color: white;
     border-radius: 10px;
     padding: 5px 10px;
+}.labelBox{
+
+    text-align: center;
+
 }
         .logs{
           text-align:center;
