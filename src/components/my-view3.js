@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 import { html } from '@polymer/lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
+import '@polymer/paper-input/paper-input.js';
 
 // This element is connected to the Redux store.
 import { store } from '../store.js';
@@ -37,12 +38,37 @@ class MyView3 extends connect(store)(PageViewElement) {
     return html`
       ${SharedStyles}
       ${ButtonSharedStyles}
+      <style>
+        .startButton{
+    display: block;
+    background: var(--app-primary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+        .logs{
+          text-align:center;
+          height:300px;
+        }
+        section:nth-child(0) {
+          padding-top:0;
+overflow:auto;
+        }
+p{font-family:monospace;}
+      </style>
       <section>
           <section class = "controlButtons">
             <button class= "startButton">Start</button>
   </section>
           <section class = "logs">
+          <p> Some random text</p>
   </section>
+          <section class = "inputContainer">
+          <div class="labelBox">
+	<paper-input id="input"  label="Input value if script asked sth" value="" disabled></paper-input>
+</div>
+  </section>
+
       </section>
     `;
   }

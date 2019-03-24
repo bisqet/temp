@@ -87,7 +87,7 @@ class MyApp extends connect(store)(LitElement) {
       .toolbar-list {
         display: none;
       }
-
+  
       .toolbar-list > a {
         display: inline-block;
         color: var(--app-header-text-color);
@@ -132,7 +132,7 @@ class MyApp extends connect(store)(LitElement) {
       }
 
       .main-content {
-        padding-top: 64px;
+        padding-top: 32px;
         min-height: 100vh;
       }
 
@@ -162,9 +162,6 @@ class MyApp extends connect(store)(LitElement) {
           display: none;
         }
 
-        .main-content {
-          padding-top: 107px;
-        }
 
         /* The drawer button isn't shown in the wide layout, so we don't
         need to offset the title */
@@ -173,7 +170,30 @@ class MyApp extends connect(store)(LitElement) {
         }
       }
 .cls-1,.cls-3,.cls-4,.cls-5{fill:#fff;}.cls-1,.cls-2,.cls-3,.cls-4{stroke:#020608;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-9{stroke-miterlimit:10;}.cls-2,.cls-6{fill:var(--app-primary-color)}.cls-3,.cls-5{stroke-width:0.75px;}.cls-4{stroke-width:0.5px;}.cls-5,.cls-9{stroke:#000;}.cls-7,.cls-8{isolation:isolate;}.cls-8{font-size:103.09px;font-family:Constantia-Italic, Constantia;font-style:italic;}    </style>
-
+  .additionalMessage{
+display: block;
+top: -8px;
+color: var(--app-secondary-color);
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top-left-radius: unset
+border-top-right-radius: unset;
+background-color: rgb(255, 255, 255);
+position: relative;
+z-index: 2;
+font-family: var( --paper-font-caption_-_font-family);
+-webkit-font-smoothing: var(--paper-font-caption_-_-webkit-font-smoothing);
+overflow: var( --paper-font-caption_-_overflow);
+text-overflow: var( --paper-font-caption_-_text-overflow);
+font-size: var( --paper-font-caption_-_font-size);
+font-weight: var( --paper-font-caption_-_font-weight);
+letter-spacing: var( --paper-font-caption_-_letter-spacing);
+line-height: var(--paper-font-caption_-_line-height);
+border-top: none;
+}
+hidden{
+display:hidden
+}
     <!-- Header -->
     <app-header condenses reveals effects="waterfall">
       <app-toolbar class="toolbar-top">
@@ -193,9 +213,9 @@ class MyApp extends connect(store)(LitElement) {
     <app-drawer opened="${_drawerOpened}"
         on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
       <nav class="drawer-list">
-        <a selected?="${_page === 'view1'}" href="/view1">View One</a>
-        <a selected?="${_page === 'view2'}" href="/view2">View Two</a>
-        <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
+        <a selected?="${_page === 'view1'}" href="/view1">Credentials</a>
+        <a selected?="${_page === 'view2'}" href="/view2">Sites</a>
+        <a selected?="${_page === 'view3'}" href="/view3">Run</a>
       </nav>
     </app-drawer>
 
@@ -208,7 +228,7 @@ class MyApp extends connect(store)(LitElement) {
     </main>
 
     <footer>
-      <p>Made with &hearts; by the Polymer team.</p>
+      <p>Made with &hearts; by bisqet</p>
     </footer>
 
     <snack-bar active?="${_snackbarOpened}">

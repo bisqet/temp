@@ -10,7 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 import { html } from '@polymer/lit-element';
 import { PageViewElement } from './page-view-element.js';
-import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 import '@polymer/paper-input/paper-input.js';
 
 // These are the shared styles needed by this element.
